@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-import home, eda, forecast, predict, about
+import home as home, eda, forecast, predict, about
 
 st.set_page_config(
     page_title="Dashboard",
@@ -14,7 +14,6 @@ class MultiApp:
         self.apps = []
 
     def add_app(self, title, func):
-
         self.apps.append({
             "title": title,
             "function": func
@@ -47,7 +46,5 @@ class MultiApp:
             predict.app()        
         if app == 'About':
             about.app()     
-             
-          
              
     run()            

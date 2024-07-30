@@ -5,11 +5,10 @@ def app():
 
     st.header("Deskripsi Projek")
     st.markdown("""
-        Pembuatan dashboard ini merupakan persyaratan yang harus dipenuhi untuk menyelesaikan 
-                program studi dan memperoleh gelar Sarjana Komputer dengan jurusan Sistem Informasi 
-                di Universitas Sari Mutiara Indonesia. Projek ini merupakan tugas akhir atau skripsi
-                yang dikerjakan oleh Filbert Leonardo dengan NIM 200416004.
-    """)
+                Projek ini adalah penelitian yang dikerjakan oleh Filbert Leonardo (200416004) sebagai 
+                bagian dari persyaratan untuk menyelesaikan program studi dan mendapatkan gelar Sarjana 
+                Komputer di jurusan Sistem Informasi, Universitas Sari Mutiara Indonesia.
+        """)
 
     tab1, tab2, tab3, tab4 = st.tabs(["Latar Belakang", "Permasalahan", "Tujuan", "Manfaat"])
 
@@ -50,35 +49,35 @@ def app():
     
     with tab5:
         st.info("""
-        Kami menggunakan model CatBoost Classifier untuk memprediksi potensi banjir di kota Medan:
-        - Accuracy Score = 0.95
-        - Recall Score = 0.93
+        Menggunakan model CatBoost Classifier untuk memprediksi potensi banjir di kota Medan:
+        - Accuracy Score = 0.96
+        - Recall Score = 0.96
         - Precision Score = 0.96
-        - F1 Score = 0.95
+        - F1 Score = 0.96
         """)
     with tab6:
         st.info("""
-        Kami menggunakan model Long Short Term Memory untuk memperkirakan cuaca pada waktu kedepannya:
-        - Variabel curah_hujan: MAE = 5.59, RMSE = 8.12 , MAPE = inf
-        - Variabel suhu_udara: MAE = 1.03, RMSE = 1.26 , MAPE = 3.48
-        - Variabel kelembapan_udara: MAE = 4.69, RMSE = 5.81, MAPE = 6.22
+        Menggunakan model Long Short Term Memory untuk memprediksi cuaca pada hari selanjutnya:
+        - Variabel curah_hujan: MAE = 6.10, R2 = 0.18, RMSE = 8.73 , MAPE = inf
+        - Variabel suhu_udara: MAE = 1.00, R2 = 0.24, RMSE = 1.24 , MAPE = 3.48
+        - Variabel kelembapan_udara: MAE = 4.53, R2 = 0.32, RMSE = 5.64, MAPE = 6.00
         """)
 
     st.subheader("Dataset yang Digunakan")
     st.markdown("""
     Kami menggunakan beberapa dataset dalam projek ini. Berikut adalah beberapa di antaranya:
-    1. Data Cuaca Harian di Kota Medan - [BMKG](https://dataonline.bmkg.go.id/home)
+    1. Data Cuaca Harian di Kota Medan - [BMKG](https://dataonline.bmkg.go.id/data_iklim)
     2. Data Bencana di Indonesia - [BNPB](https://dibi.bnpb.go.id/)
     """)
 
     st.subheader("Referensi Tambahan")
     st.markdown("""
-        - **Proses Analisis:** [Link ke Colab]()
+        - **Proses Pembuatan Model:** [Link ke Colab](https://colab.research.google.com/drive/1w15YdHEOq1vsbp6qQOPjFzWweW-2P_q5?usp=sharing)
         - **GitHub Project:** [Link ke GitHub]()
         - **PowerPoint:** [Link ke PPT]()
     """)
 
-    st.subheader("Kontak")
+    st.subheader("Kontak Developer")
     st.markdown("""
         **Filbert Leonardo**
         - Email: [filbertleo88@gmail.com](mailto:filbertleo88@gmail.com) 

@@ -30,7 +30,7 @@ def app():
     st.title('Selamat Datang di Aplikasi Prediksi Banjir')
 
     # Load the trained classifier model from the file
-    model_file_path = "model/cb_grid.pkl"  # Ganti dengan path model yang sesuai
+    model_file_path = "model/catboost_model.pkl"  # Ganti dengan path model yang sesuai
     classifier = load_model(model_file_path)
 
     # Sidebar 
@@ -40,7 +40,7 @@ def app():
         uploaded_file = st.file_uploader("Upload CSV file", type=["csv"])
 
         st.write("Jika Anda belum memiliki dataset, Anda dapat mengunduh contoh dataset di bawah ini.")
-        df_example = pd.read_csv("data/df_time_series.csv")
+        df_example = pd.read_csv("data/df_forecast.csv")
         st.download_button(label="Unduh Contoh Dataset",
                            data=df_example.to_csv(index=False),
                            file_name='contoh_dataset.csv',
@@ -51,8 +51,6 @@ def app():
 
     if uploaded_file is not None:
         data = pd.read_csv(uploaded_file)
-        # st.write("Dataset yang di-upload:")
-        # st.dataframe(data.head(), use_container_width=True)
 
         if classifier:
             predictions = prediksi_banjir(classifier, data[['curah_hujan', 'suhu_udara', 'kelembapan_udara']])

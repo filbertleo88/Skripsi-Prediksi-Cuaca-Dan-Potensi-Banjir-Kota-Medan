@@ -88,18 +88,18 @@ def app():
     st.subheader('Prediksi Time Series Cuaca di Kota Medan Menggunakan Algoritma Long Short Term Memory')
 
     # Load data
-    filepath = 'data/df_time_series.csv'
+    filepath = 'data/df_forecast.csv'
     df = load_data(filepath)
     df['tanggal'] = pd.to_datetime(df['tanggal'], format='%Y-%m-%d')
     df.set_index('tanggal', inplace=True)
 
     # Load models
-    lstm_model = keras_model('model/best_model.h5')
-    classifier = load_model("model/cb_grid.pkl")
+    forecaster = keras_model('model/lstm_model.h5')
+    classifier = load_model("model/catboost_model.pkl")
 
     st.dataframe(df, use_container_width=True)
 
-    if lstm_model:
+    if forecaster:
         n_forecast_days = st.number_input('Jumlah hari yang ingin diprediksi', min_value=1, max_value=30, value=30)
 
         if st.button('Prediksi'):
@@ -114,7 +114,7 @@ def app():
                 forecast = []
                 for i in range(n_forecast_days):
                     seq = test_data_sequences[i].reshape((1, n_days, n_features))
-                    predicted = lstm_model.predict(seq)
+                    predicted = forecaster.predict(seq)
                     forecast.append(predicted[0])
 
                 forecast_array = np.array(forecast)

@@ -15,15 +15,15 @@ def app():
     st.title('Dasboard Kondisi Cuaca Kota Medan (2020 - 2024) ')
     
     # Load data
-    df = load_data("data/df_final.csv")
+    df = load_data("data/df_classifier.csv")
     df['tanggal'] = pd.to_datetime(df['tanggal'])
 
     parameters = ['curah_hujan', 'suhu_udara', 'kelembapan_udara']
 
     # Dictionary to map categories to their respective colors
     category_colors = {
-        "Tidak Banjir": "#00FF00",     # Green
-        "Banjir": "#FF0000"             # Red
+        "Tidak": "#00FF00",     # Green
+        "Ya": "#FF0000"             # Red
     }
 
 #====================================================================
@@ -38,10 +38,10 @@ def app():
         
         start_date = st.date_input('Tanggal Mulai', min(df['tanggal']).date(),
                                         min_value=pd.to_datetime('2020-01-01').date(),
-                                        max_value=pd.to_datetime('2024-05-30').date())
+                                        max_value=pd.to_datetime('2024-06-30').date())
         end_date = st.date_input('Tanggal Berakhir', max(df['tanggal']).date(),
                                         min_value=pd.to_datetime('2020-01-01').date(),
-                                        max_value=pd.to_datetime('2024-05-30').date())
+                                        max_value=pd.to_datetime('2024-06-30').date())
     
 
     start_datetime = pd.to_datetime(start_date).date()
@@ -59,7 +59,7 @@ def app():
                     (df['tanggal'] >= start_datetime) & (df['tanggal'] <= end_datetime)]
 
 ## Total Days of Status Banjir
-    st.write(f"**Metrik Utama untuk - {selected_category}**")
+    st.write(f"**Kejadian Banjir - {selected_category}**")
     category_counts = filtered_data.groupby('status_banjir')['tanggal'].nunique()
     cols = st.columns(2)
     for index, (category, count) in enumerate(category_counts.items()):
@@ -79,7 +79,7 @@ def app():
 
 ## Distribution of status_banjir
     # Calculate counts for each category and set the custom order
-    custom_category_order = ["Tidak Banjir", "Banjir"]
+    custom_category_order = ["Tidak", "Ya"]
     category_counts = filtered_data['status_banjir'].value_counts().reset_index()
     category_counts.columns = ['status_banjir', 'Count']
     category_counts['status_banjir'] = pd.Categorical(category_counts['status_banjir'], categories=custom_category_order, ordered=True)
@@ -98,7 +98,7 @@ def app():
     st.plotly_chart(fig, use_container_width=True)
 
 #==================================================================
-## Time Series of Air Pollutant
+## Time Series of Weather
 
     col1, col2 = st.columns(2)
     with col1:
@@ -145,9 +145,8 @@ def app():
     # Display the chart in Streamlit
     st.plotly_chart(fig, use_container_width=True)
 #==================================================================
-## Correlation of Air Pollutant
+## Correlation of Weather
 
-    
     # Display Scatter Plot
     col1, col2 = st.columns(2)
     with col1:
@@ -183,11 +182,11 @@ def app():
         st.markdown(f'##### ***{percent_status}***')
         
 #==================================================================
-# Air Particle Correlation with status_banjir
+# Weather Parameter Correlation with status_banjir
 
     filtered_data['status_banjir'] = filtered_data['status_banjir'].map({
-        'Tidak Banjir':0,
-        'Banjir':1,
+        'Tidak':0,
+        'Ya':1,
     })
 
     particle = []

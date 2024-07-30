@@ -62,7 +62,7 @@ def app():
         """)
 
     # Load Dataset
-    df = load_data("data/df_final.csv")
+    df = load_data("data/df_classifier.csv")
     df['tanggal'] = pd.to_datetime(df['tanggal'])
     df.set_index('tanggal', inplace=True)
 
@@ -72,7 +72,7 @@ def app():
     st.dataframe(df, use_container_width=True)
     url1 = "https://dataonline.bmkg.go.id/home"
     url2 = "https://gis.bnpb.go.id/"
-    st.caption("Data cuaca dapat diperoleh dari BMKG [Cuaca Harian](%s)" % url1)
+    st.caption("Data cuaca dapat diperoleh dari BMKG [Data Online](%s)" % url1)
     st.caption("Data bencana dapat diperoleh dari BPBD [Geoportal Bencana Indonesia](%s)" % url2)
 
     st.divider()
