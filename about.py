@@ -73,8 +73,8 @@ def app():
     st.subheader("Referensi Tambahan")
     st.markdown("""
         - **Proses Pembuatan Model:** [Link ke Colab](https://colab.research.google.com/drive/1w15YdHEOq1vsbp6qQOPjFzWweW-2P_q5?usp=sharing)
-        - **GitHub Project:** [Link ke GitHub]()
-        - **PowerPoint:** [Link ke PPT]()
+        - **GitHub Project:** [Link ke GitHub](https://github.com/filbertleo88/Skripsi-Prediksi-Cuaca-Dan-Potensi-Banjir-Kota-Medan.git)
+        - **PowerPoint:** [Link ke PPT](https://www.canva.com/design/DAGMBkqI_bI/jpyG2i-Ye9e-LD5WxuUeXg/view?utm_content=DAGMBkqI_bI&utm_campaign=designshare&utm_medium=link&utm_source=editor)
     """)
 
     st.subheader("Kontak Developer")
