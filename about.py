@@ -67,7 +67,7 @@ def app():
     st.markdown("""
     Kami menggunakan beberapa dataset dalam projek ini. Berikut adalah beberapa di antaranya:
     1. Data Cuaca Harian di Kota Medan - [BMKG](https://dataonline.bmkg.go.id/data_iklim)
-    2. Data Bencana di Indonesia - [BNPB](https://dibi.bnpb.go.id/)
+    2. Data Bencana di Indonesia - [BNPB](https://gis.bnpb.go.id/)
     """)
 
     st.subheader("Referensi Tambahan")
