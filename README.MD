@@ -61,7 +61,7 @@ Dashboard ini memungkinkan pengguna untuk:
 - Model prediksi cuaca menggunakan LSTM dikembangkan untuk mengidentifikasi pola cuaca berdasarkan data historis.
 - Model prediksi potensi banjir menggunakan CatBoost dikembangkan untuk memprediksi kemungkinan terjadinya banjir berdasarkan kondisi cuaca.
 
-## Dashboard [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://skripsi-prediksi-cuaca-dan-potensi-banjir-kota-medan-ecvvskcfp.streamlit.app/)
+## Dashboard [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prediksi-cuaca-dan-banjir-kota-medan.streamlit.app/)
 Dashboard ini dibuat dengan Streamlit untuk menyediakan antarmuka yang interaktif dan mudah digunakan.
 
 Dengan adanya dashboard ini, diharapkan dapat membantu masyarakat dan pemerintah setempat dalam memitigasi risiko banjir dan mempersiapkan diri terhadap kondisi cuaca ekstrem.
