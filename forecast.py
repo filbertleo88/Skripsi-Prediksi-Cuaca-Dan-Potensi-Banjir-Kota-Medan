@@ -47,7 +47,8 @@ def plot_forecast(df, forecast_df):
     for column in df.columns:
         fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
         fig.add_trace(go.Scatter(x=df.index, y=df[column], mode='lines', name='Historikal', line=dict(color='cyan')), row=1, col=1)
-        fig.add_trace(go.Scatter(x=forecast_df.index, y=forecast_df[column], mode='lines', name='Prakiraan', line=dict(color='magenta')), row=1, col=1)
+        fig.add_trace(go.Scatter(x=forecast_df.index, y=forecast_df[column], mode='lines', name='Prakiraan', 
+                                 line=dict(color='magenta')), row=1, col=1)
         
         if not df.empty and not forecast_df.empty:
             fig.add_trace(go.Scatter(x=[df.index[-1], forecast_df.index[0]],
@@ -84,8 +85,8 @@ def map_status_banjir(prediction):
     return status_banjir.get(prediction, "Unknown")
 
 def app():
-    st.title('Selamat Datang di Aplikasi Peramalan Cuaca')
-    st.subheader('Prediksi Time Series Cuaca di Kota Medan Menggunakan Algoritma Long Short Term Memory')
+    st.title('Selamat Datang di Aplikasi Prediksi Cuaca')
+    st.subheader('Prediksi Cuaca di Kota Medan Menggunakan Algoritma Long Short Term Memory')
 
     # Load data
     filepath = 'data/df_forecast.csv'
@@ -129,7 +130,8 @@ def app():
                 plot_forecast(df, forecast_df)
 
                 forecast_df['status_banjir'] = forecast_df.apply(
-                    lambda row: map_status_banjir(prediksi_banjir(classifier, row['curah_hujan'], row['suhu_udara'], row['kelembapan_udara'])), axis=1)
+                    lambda row: map_status_banjir(prediksi_banjir(classifier, row['curah_hujan'], row['suhu_udara'], 
+                                                                  row['kelembapan_udara'])), axis=1)
 
                 st.subheader("Data Prakiraan Cuaca dengan Potensi Banjir")
                 st.dataframe(forecast_df, use_container_width=True)
