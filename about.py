@@ -80,6 +80,7 @@ def app():
     st.subheader("Kontak Developer")
     st.markdown("""
         **Filbert Leonardo**
+        - Website: [Portfolio]](https://portfolio-filbertleo88s-projects.vercel.app/)
         - Email: [filbertleo88@gmail.com](mailto:filbertleo88@gmail.com) 
         - LinkedIn: [Filbert Leonardo](https://www.linkedin.com/in/filbert-leonardo/) 
     """)
