@@ -39,8 +39,8 @@ class MultiApp:
         # Menu
         if app == "Home":
             home.app()
-        # if app == "EDA":
-        #     eda.app()
+        if app == "EDA":
+            eda.app()
         # if app == "Forecast":
         #     forecast.app()    
         if app == "Prediction":
