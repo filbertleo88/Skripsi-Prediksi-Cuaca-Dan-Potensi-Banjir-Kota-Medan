@@ -24,8 +24,8 @@ class MultiApp:
         with st.sidebar:        
             app = option_menu(
                 menu_title='Dashboard',
-                options=['Home','Prediction', 'Forecast','About'],   #,'EDA'
-                icons=['house','alt','activity','info-circle-fill'], #,'bar-chart'
+                options=['Home', 'EDA','Prediction','About'],   #,'Forecast'
+                icons=['house','bar-chart','alt','info-circle-fill'], #,'activity'
                 menu_icon='bi-cast',
                 default_index=0,
                 styles={
