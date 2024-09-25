@@ -41,8 +41,8 @@ class MultiApp:
             home.app()
         # if app == "EDA":
         #     eda.app()
-        if app == "Forecast":
-            forecast.app()    
+        # if app == "Forecast":
+        #     forecast.app()    
         if app == "Prediction":
             predict.app()        
         if app == 'About':

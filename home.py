@@ -10,7 +10,7 @@ def load_data(file_path, index_col=None):
 
 def app():
     # Judul dan Informasi mengenai Dasboard
-    st.title("Dashboard Prediksi Cuaca dan Banjir di Kota Medan :thunder_cloud_and_rain:")
+    st.title("Dashboard Prediksi Banjir di Kota Medan :thunder_cloud_and_rain:")
     st.write("""Memahami pola cuaca di Indonesia adalah kunci untuk mengetahui penyebab dan dampak banjir. 
              Tingginya curah hujan selama musim hujan secara signifikan berkontribusi pada terjadinya banjir 
              yang sering dan parah. Oleh karena itu, pemantauan cuaca yang tepat dan perbaikan infrastruktur 
