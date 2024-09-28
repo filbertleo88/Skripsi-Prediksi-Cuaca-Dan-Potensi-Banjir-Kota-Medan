@@ -24,8 +24,8 @@ class MultiApp:
         with st.sidebar:        
             app = option_menu(
                 menu_title='Dashboard',
-                options=['Home', 'EDA','Prediction','About'],   #,'Forecast'
-                icons=['house','bar-chart','alt','info-circle-fill'], #,'activity'
+                options=['Home', 'EDA','Forecast','Prediction','About'],   #
+                icons=['house','bar-chart','activity','alt','info-circle-fill'], #
                 menu_icon='bi-cast',
                 default_index=0,
                 styles={
@@ -41,8 +41,8 @@ class MultiApp:
             home.app()
         if app == "EDA":
             eda.app()
-        # if app == "Forecast":
-        #     forecast.app()    
+        if app == "Forecast":
+            forecast.app()    
         if app == "Prediction":
             predict.app()        
         if app == 'About':
